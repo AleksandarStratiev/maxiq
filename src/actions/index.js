@@ -11,9 +11,9 @@ export const decrement = () => {
 };
 
 export function actionTv() {
-    useEffect(() => {
-        setHouseBg("on");
-      });
+    // useEffect(() => {
+    //     setHouseBg("on");
+    //   });
 }
 
 
