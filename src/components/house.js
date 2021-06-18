@@ -4,32 +4,24 @@ import tvOn from '../images/actions/tv-on.gif';
 
 import { actionTv } from '../actions'
 
-class House extends React.Component {
-  constructor(props) {
-    super(props); 
 
-    this.state = {
-      tv : "off"
-    }
+function House() {
 
-    this.actionTv = actionTv.bind(this);
+  const [houseBg, setHouseBg] = useState('');
+  
+  useEffect(() => {
+    setHouseBg("show");
+  });
 
-  }
+  return (
+    <div className="house">
+      <img src={house} alt="house" className={`houseBackground ${houseBg}`} />
+      <div className="actions">
+        <img src={tvOn} alt="tvOn" className={`tvOn on`} />
 
-
-
-  render() {
-    console.log(this.state.tv)
-    return (
-        <div className="house">
-          <img src={house} alt="house" className={`houseBackground show`} />
-          <div className="actions">
-            <img src={tvOn} alt="tvOn" className={`tvOn on`} />
-
-          </div> 
-        </div>
-    )
-  }
+      </div> 
+    </div>
+  )
 }
 
 export default House;

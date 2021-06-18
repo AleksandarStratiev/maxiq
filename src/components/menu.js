@@ -13,41 +13,40 @@ import camera from '../images/icons/camera.png';
 
 import { actionTv } from '../actions'
 
-class Menu extends React.Component {
+function Menu() {
 
-    // const [bannerBg, setBannerBg] = useState('default');
+  const [bgImg, setBgImg] = useState('default')    
 
-  render() {
+
     return (
       <div className="menu">
         <span>MaxiQ - Smart home</span>
         <span>Последно използвана функция:</span>
-        {/* <div alt="Banner Menu" className={`bannerMenu ${bannerBg}`} /> */}
-        <div alt="Banner Menu" className={`bannerMenu show`} />
+        <div alt="Banner Menu" className={`bannerMenu ${bgImg}`} />
         <span className="slider-point"></span>
         <div className="btns">
-          <div >
+          <div onClick={() => {setBgImg('lamp')}}>
             <BigBtn icon={lamp} />
           </div>
-          <div >
+          <div onClick={() => {setBgImg('klima')}}>
             <BigBtn icon={air} />
           </div>
-          <div >
+          <div onClick={() => {setBgImg('tv')}}>
             <BigBtn icon={tv} />
           </div>
-          <div >
+          <div onClick={() => {setBgImg('fan')}}>
             <BigBtn icon={fan} />
           </div>
-          <div>
+          <div onClick={() => {setBgImg('blinds')}}>
             <MiniBtn icon={blinds} />
           </div>
-          <div >
+          <div onClick={() => {setBgImg('contact')}}>
             <MiniBtn icon={contact} />
           </div>
-          <div >
+          <div onClick={() => {setBgImg('garage')}}>
             <MiniBtn icon={garage} />
           </div>      
-          <div onClick={() => actionTv()}>
+          <div>
             <LongBtn icon={camera} />
           </div>
           <div>
@@ -57,6 +56,6 @@ class Menu extends React.Component {
         
       </div>
     );
-  }
+
 }
 export default Menu;
