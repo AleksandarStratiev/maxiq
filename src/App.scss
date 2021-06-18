@@ -1,0 +1,224 @@
+.App {
+    background-image: url('/images/frontBg.png');
+    display: block;
+    height: 615px;
+    margin-top: -110px;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.container {
+    width: 1180px;
+    margin: 0 auto;
+}
+.header-img {
+    background-image: url('/images/header.png');
+    display: block;
+    height: 179px;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+.house {
+    .houseBackground {
+        opacity: 0;
+        margin-top: 38px;
+        margin-left: -110px;
+        position: relative;  
+        -webkit-transition: opacity 2s ease-out;
+        -moz-transition: opacity 2s ease-out;
+        -o-transition: opacity 2s ease-out;
+        transition: opacity 2s ease-out;
+        &.show {
+            opacity: 1;
+            transition-delay: 2s;
+            position: absolute;
+        }
+    }
+    .actions {
+        position: absolute;
+        .tvOn {
+            position: absolute;
+            opacity: 0;
+            top: 206px;
+            left: -25px;
+            &.on {
+                opacity: 1;
+            }
+        }
+    }    
+}
+
+.mobile {
+    width: 220px;    
+    height: 390px;
+    display: inline-block;
+    position: absolute;
+    margin-left: 910px;
+    margin-top: 166px;
+    overflow: hidden;
+    .bannerDefault {
+        position: relative;
+        margin-top: 400px;  
+        -webkit-transition: margin-top 1s ease-out;
+        -moz-transition: margin-top 1s ease-out;
+        -o-transition: margin-top 1s ease-out;
+        transition: margin-top 1s ease-out;
+        &.show {
+            margin-top: 0px;
+            transition-delay: 4s;
+        } 
+    }
+}
+
+.slogan {
+    position: absolute;
+    color: #fff;
+    float: right;
+    margin-left: 812px;
+    margin-top: -154px;
+    padding: 0;
+    font-weight: normal;
+    max-width: 402px;
+    text-align: center;
+    font-size: 48px;
+    -webkit-transition: margin-top 1s ease-out;
+    -moz-transition: margin-top 1s ease-out;
+    -o-transition: margin-top 1s ease-out;
+    transition: margin-top 1s ease-out;
+    p {
+        margin: 0;
+        &:last-child {
+            font-size: 24px;
+        }
+    }
+    &.show {
+        margin-top: 16px;
+        transition-delay: 4s;
+    }
+}
+.menu {
+
+    -webkit-transition: opacity 1s ease-out;
+    -moz-transition: opacity 1s ease-out;
+    -o-transition: opacity 1s ease-out;
+    transition: opacity 1s ease-out;
+    position: relative;
+    color: #fff;
+    top: 0;
+    margin-top: -358px;
+    &.show {
+        opacity: 1;
+        transition-delay: 5.5s;
+    }
+    span {
+        display: block;
+        padding-left: 22px;
+        &:nth-child(2) {
+            font-size: 13px;
+            margin-top: 4px;
+        }
+    }
+    .bannerMenu {
+        margin: 0;
+        padding-left: 11px;        
+    }
+    .slider-point {
+        background-image: url('/images/slider-point.png');
+        width: 206px;
+        height: 10px;
+        margin-left: 8px;
+        margin-top: -4px;
+    }
+    .btns {
+        cursor: pointer;
+        margin-top: 0;
+        margin-left: 11px;
+        .bigBtn {
+            background-image: url('/images/buttons/bigBtn.png');
+            width: 100px;
+            height: 63px;
+            display: inline-block;
+            &.bigBtnOn {
+                background-image: url('/images/buttons/bigBtnOn.png');
+                width: 100px;
+                height: 63px;
+            }
+            .icon {
+                margin: 9px 13px;
+            }
+        }
+        .miniBtn {
+            background-image: url('/images/buttons/miniBtn.png');
+            width: 65px;
+            height: 69px;
+            margin-top: -4px;
+            display: inline-block;
+            vertical-align: top;
+            &.miniBtnOn {
+                background-image: url('/images/buttons/miniBtnOn.png');
+                width: 65px;
+                height: 69px;
+                margin-top: -4px;
+            }
+            .icon {
+                margin: 17px 8px;
+            }
+        }
+        .longBtn {
+            background-image: url('/images/buttons/longBtn.png');
+            width: 96px;
+            height: 54px;
+            display: inline-block;
+            &.longBtnOn {
+                background-image: url('/images/buttons/longBtnOn.png');
+                width: 96px;
+                height: 54px;
+            }
+            .icon {
+                margin: 20px 17px;
+            }
+        }
+        .bigBtn, .longBtn {
+            vertical-align: top;
+        }
+        .longBtn {
+            margin-top: -12px;
+            width: 96px;
+        }
+        div {
+            display: inline-block;
+        }
+    }
+    .bannerMenu {
+        width: 200px;
+        height: 74px;
+        margin-left: 10px;
+        &.default {
+            background-image: url('/images/bannerDefault.png');
+        }
+        &.klima {
+            background-image: url('/images/banner/klima.png');
+        }
+        &.lamp {
+            background-image: url('/images/banner/lamp.png');
+        }
+        &.tv {
+            background-image: url('/images/banner/tv.png');
+        }
+        &.vent {
+            background-image: url('/images/banner/vent.png');
+        }
+        &.blinds {
+            background-image: url('/images/banner/blinds.png');
+        }
+        &.contact {
+            background-image: url('/images/banner/contact.png');
+        }
+        &.garage {
+            background-image: url('/images/banner/garage.png');
+        }
+    }
+}
