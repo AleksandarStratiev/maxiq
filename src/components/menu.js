@@ -11,12 +11,11 @@ import contact from '../images/icons/contact.png';
 import garage from '../images/icons/garage.png';
 import camera from '../images/icons/camera.png';
 
-import { actionTv } from '../actions'
+// import { actionTv } from '../actions'
 
 function Menu() {
 
   const [bgImg, setBgImg] = useState('default')    
-
 
     return (
       <div className="menu">

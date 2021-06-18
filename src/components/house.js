@@ -2,16 +2,17 @@ import React, { useState, useEffect } from 'react';
 import house from '../images/house.png';
 import tvOn from '../images/actions/tv-on.gif';
 
-import { actionTv } from '../actions'
+// import { actionTv } from '../actions'
 
 
 function House() {
 
   const [houseBg, setHouseBg] = useState('');
-  
+
   useEffect(() => {
     setHouseBg("show");
   });
+
 
   return (
     <div className="house">
