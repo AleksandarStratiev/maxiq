@@ -48,6 +48,125 @@
                 opacity: 1;
             }
         }
+        .fanOn {
+            position: absolute;
+            opacity: 0;
+            top: 174px;
+            left: 419px;
+            -webkit-transition: opacity 1s ease-out;
+            -moz-transition: opacity 1s ease-out;
+            -o-transition: opacity 1s ease-out;
+            transition: opacity 1s ease-out;
+            &.on {
+                opacity: 1;
+            }
+        }
+        .klimaOn {
+            position: absolute;
+            opacity: 0;
+            top: 239px;
+            left: 313px;
+            z-index: 1;
+            -webkit-transition: opacity 1s ease-out;
+            -moz-transition: opacity 1s ease-out;
+            -o-transition: opacity 1s ease-out;
+            transition: opacity 1s ease-out;
+            &.on {
+                opacity: 1;
+            }
+        }
+        .klimaOpen {
+            position: absolute;
+            opacity: 0;
+            top: 209px;
+            left: 307px;
+            -webkit-transition: opacity 1s ease-out;
+            -moz-transition: opacity 1s ease-out;
+            -o-transition: opacity 1s ease-out;
+            transition: opacity 1s ease-out;
+            &.on {
+                opacity: 1;
+            }
+        }
+        .contactOn {
+            position: absolute;
+            opacity: 0;
+            top: 287px;
+            left: 214px;
+            z-index: 1;
+            -webkit-transition: opacity 1s ease-out;
+            -moz-transition: opacity 1s ease-out;
+            -o-transition: opacity 1s ease-out;
+            transition: opacity 1s ease-out;
+            &.on {
+                opacity: 1;
+            }
+        }
+        .ovenOn {
+            position: absolute;
+            opacity: 0;
+            top: 303px;
+            left: 211px;
+            -webkit-transition: opacity 1s ease-out;
+            -moz-transition: opacity 1s ease-out;
+            -o-transition: opacity 1s ease-out;
+            transition: opacity 1s ease-out;
+            &.on {
+                opacity: 1;
+            }
+        }
+        .garageOn {
+            position: absolute;
+            opacity: 1;
+            top: 293px;
+            left: 691px;
+            -webkit-transition: opacity 0.5s ease-out;
+            -moz-transition: opacity 0.5s ease-out;
+            -o-transition: opacity 0.5s ease-out;
+            transition: opacity 0.5s ease-out;
+            &.on {
+                opacity: 1;
+            }
+        }
+        .garageTop {
+            position: absolute;
+            opacity: 1;
+            top: 293px;
+            left: 691px;
+            -webkit-transition: opacity 0.5s ease-out;
+            -moz-transition: opacity 0.5s ease-out;
+            -o-transition: opacity 0.5s ease-out;
+            transition: opacity 0.5s ease-out;
+            &.on {
+                opacity: 1;
+            }
+        }
+        .lampBedroomOn {
+            position: absolute;
+            opacity: 0;
+            top: 138px;
+            left: 498px;
+            -webkit-transition: opacity 1s ease-out;
+            -moz-transition: opacity 1s ease-out;
+            -o-transition: opacity 1s ease-out;
+            transition: opacity 1s ease-out;
+            &.true {
+                opacity: 1;
+            }
+        }
+        .lampLivingroomOn {
+            position: absolute;
+            opacity: 0;
+            top: 415px;
+            left: 40px;
+            -webkit-transition: opacity 1s ease-out;
+            -moz-transition: opacity 1s ease-out;
+            -o-transition: opacity 1s ease-out;
+            transition: opacity 1s ease-out;
+            &.true {
+                opacity: 1;
+            }
+        }
     }    
 }
 
@@ -191,6 +310,27 @@
         div {
             display: inline-block;
         }
+        .bigBtnLong {
+            background-image: url('/images/buttons/bigBtnLong.png');
+            width: 190px;
+            height: 62px;
+            margin-left: 4px;
+            margin-bottom: -7px;
+            margin-top: -6px;
+            .icon {
+                padding-top: 18px;
+                padding-left: 16px;
+                display: block;
+            }
+            display: inline-block;
+            &.bigBtnLongOn {
+                background-image: url('/images/buttons/bigBtnLongOn.png');
+            } 
+        }
+        .uninstall {
+            margin-left: 5px;
+            cursor: no-drop;
+        }
     }
     .bannerMenu {
         width: 200px;
@@ -221,4 +361,18 @@
             background-image: url('/images/banner/garage.png');
         }
     }
+    .btnBack {
+        cursor: pointer;
+        .iconBack {
+            background-image: url('/images/icons/back.png');
+            width: 7px;
+            height: 16px;
+            padding: 0;
+            display: inline-block;
+            margin-left: 23px;
+            margin-right: 7px;
+            vertical-align: -2px;
+        }
+    }
+
 }

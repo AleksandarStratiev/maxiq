@@ -13,17 +13,18 @@ import camera from '../images/icons/camera.png';
 
 // import { actionTv } from '../actions'
 
-function Menu() {
+function Menu(prop) {
 
   const [bgImg, setBgImg] = useState('default')    
 
     return (
       <div className="menu">
+        <button onClick={this.props.action} >buttonTest</button>
         <span>MaxiQ - Smart home</span>
         <span>Последно използвана функция:</span>
         <div alt="Banner Menu" className={`bannerMenu ${bgImg}`} />
         <span className="slider-point"></span>
-        <div className="btns">
+        <div className="btns">        
           <div onClick={() => {setBgImg('lamp')}}>
             <BigBtn icon={lamp} />
           </div>
