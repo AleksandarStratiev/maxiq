@@ -12,15 +12,17 @@ import blinds from '../images/icons/blinds.png';
 import contact from '../images/icons/contact.png';
 import garage from '../images/icons/garage.png';
 import camera from '../images/icons/camera.png';
+import blindsGarage from '../images/icons/blindsGarage.png';
+import blindsLivingroom from '../images/icons/blindsLivingroom.png';
 import lampBedroom from '../images/icons/lampBedroom.png';
 import lampLivingRoom from '../images/icons/lampLivingRoom.png';
 import uninstall from '../images/buttons/uninstall.png';
+import uninstallBlinds from '../images/buttons/uninstallBlinds.png';
 
 
 class Mobile extends React.Component {
 
-  
-  renderMenu()  { 
+  renderMenu(props)  { 
     if (this.props.bgMenuLamp === true) {
       return (
         <div className="menu">
@@ -35,12 +37,50 @@ class Mobile extends React.Component {
           <div className="btns">        
             <div onClick={this.props.actionLamp}>
               <div onClick={this.props.actionLampBedroom}>
-                <BigBtnLong icon={lampBedroom} />
+                <BigBtnLong 
+                  bgBtn={this.props.bgBigBtnLongBedroom}
+                  icon={lampBedroom} 
+                />
               </div>
-              <div onClick={this.props.actionLampLiviingroom}>
-                <BigBtnLong icon={lampLivingRoom} />
+              <div onClick={this.props.actionLampLivingroom}>
+                <BigBtnLong 
+                  bgBtn={this.props.bgBigBtnLongLivingroom}
+                  icon={lampLivingRoom} 
+                />
               </div>
               <img src={uninstall} alt='uninstall' className="uninstall" />
+            </div>
+          </div>            
+        </div>
+      )
+    }
+
+    if (this.props.bgMenuBlinnds === true) {
+      return (
+        <div className="menu blinds">
+          <div className="btnBack" onClick={this.props.actionBackBlinds}>
+            <span className="iconBack"></span>
+            Назад
+          </div>
+          <span>MaxiQ - Smart home</span>
+          <span>Щори:</span>
+          <div alt="Banner Menu" className={`bannerMenu ${this.props.bgBannerMobile}`} />
+          <span className="slider-point"></span>
+          <div className="btns blinds">        
+            <div onClick={this.props.actionBlinds}>
+              <div onClick={this.props.actionBlindsGarage}>
+                <BigBtnLong 
+                  bgBtn={this.props.bgBigBtnLongBlindsGarage}
+                  icon={blindsGarage} 
+                />
+              </div>
+              <div onClick={this.props.actionBlindsLivingroom}>
+                <BigBtnLong 
+                  bgBtn={this.props.bgBigBtnLongBlindsLivingroom}
+                  icon={blindsLivingroom} 
+                />
+              </div>
+              <img src={uninstallBlinds} alt='uninstall' className="uninstall" />
             </div>
           </div>            
         </div>
@@ -55,25 +95,43 @@ class Mobile extends React.Component {
         <span className="slider-point"></span>
         <div className="btns">        
           <div onClick={this.props.actionLamp}>
-            <BigBtn icon={lamp} />
+            <BigBtn 
+              bgBtn={this.props.bgBigBtnLamp}
+              icon={lamp} 
+            />
           </div>
           <div onClick={this.props.actionKlima}>
-            <BigBtn icon={air} />
+            <BigBtn 
+              bgBtn={this.props.bgBigBtnKlima}
+              icon={air} 
+            />
           </div>
           <div onClick={this.props.actionTv}>
-            <BigBtn icon={tv} />
+            <BigBtn 
+              bgBtn={this.props.bgBigBtnTv}
+              icon={tv} 
+            />
           </div>
           <div onClick={this.props.actionFan}>
-            <BigBtn icon={fan} />
+            <BigBtn 
+              bgBtn={this.props.bgBigBtnFan}
+              icon={fan} />
           </div>
-          <div >
-            <MiniBtn icon={blinds} />
+          <div onClick={this.props.actionBlinds}>
+            <MiniBtn 
+              bgBtn={this.props.bgBigBtnBlinds}
+              icon={blinds} />
           </div>
           <div onClick={this.props.actionContact}>
-            <MiniBtn icon={contact} />
+            <MiniBtn 
+              bgBtn={this.props.bgBigBtnContact}
+              icon={contact} 
+            />
           </div>
           <div onClick={this.props.actionGarage}>
-            <MiniBtn icon={garage} />
+            <MiniBtn 
+              bgBtn={this.props.bgBigBtnGarage}
+              icon={garage} />
           </div>      
           <div>
             <LongBtn icon={camera} />

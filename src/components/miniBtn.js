@@ -1,22 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function MiniBtn(props) {
+class MiniBtn extends React.Component {
 
-  const [imgBG, setBg] = useState('miniBtnOff');
-
-  function ChaneState() {
-    if (imgBG === 'miniBtnOff') {
-      setBg('miniBtnOn')
-    } else {
-      setBg('miniBtnOff')
-    }
-  }
-
+  render() {
     return (
-      <div onClick={ChaneState} className={`miniBtn ${imgBG}`} >
-        <img src={props.icon} alt="bg" className="icon" />
+      <div className={`miniBtn ${this.props.bgBtn}`} >
+        <img src={this.props.icon} alt="bg" className="icon" />
       </div>
       );
+  }    
 }
 
 export default MiniBtn;

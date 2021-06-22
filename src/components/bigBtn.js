@@ -1,22 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function BigBtn(props) {
+class BigBtn extends React.Component {
 
-  const [imgBG, setBg] = useState('bigBtnOff');
-
-  function ChangeState() {
-    if (imgBG === 'bigBtnOff') {
-      setBg('bigBtnOn')
-    } else {
-      setBg('bigBtnOff')
-    }
-  }
-
-    return (
-      <div onClick={ChangeState} className={`bigBtn ${imgBG}`} >
-        <img src={props.icon} alt="bg" className="icon" />
+  render() {
+     return (
+      <div className={`bigBtn ${this.props.bgBtn}`} >
+        <img src={this.props.icon} alt="bgBtn" className="icon" />
       </div>
-      );
+    );
+  }
+   
 }
 
 export default BigBtn;

@@ -167,6 +167,28 @@
                 opacity: 1;
             }
         }
+        .BlindsGarageOn {
+            position: absolute;
+            top: 474px;
+            left: 748px;
+            -webkit-transition: opacity 1s ease-out;
+            -moz-transition: opacity 1s ease-out;
+            -o-transition: opacity 1s ease-out;
+            transition: opacity 1s ease-out;
+            &.true {
+                opacity: 1;
+            }
+        }
+        .BlindsLivingroomOn {
+            position: absolute;
+            top: 497px;
+            left: 433px;
+            -webkit-transition: opacity 1s ease-out;
+            -moz-transition: opacity 1s ease-out;
+            -o-transition: opacity 1s ease-out;
+            transition: opacity 1s ease-out;
+           
+        }
     }    
 }
 
@@ -260,7 +282,7 @@
             width: 100px;
             height: 63px;
             display: inline-block;
-            &.bigBtnOn {
+            &.on {
                 background-image: url('/images/buttons/bigBtnOn.png');
                 width: 100px;
                 height: 63px;
@@ -276,7 +298,7 @@
             margin-top: -4px;
             display: inline-block;
             vertical-align: top;
-            &.miniBtnOn {
+            &.on {
                 background-image: url('/images/buttons/miniBtnOn.png');
                 width: 65px;
                 height: 69px;
@@ -323,7 +345,7 @@
                 display: block;
             }
             display: inline-block;
-            &.bigBtnLongOn {
+            &.on {
                 background-image: url('/images/buttons/bigBtnLongOn.png');
             } 
         }
@@ -374,5 +396,16 @@
             vertical-align: -2px;
         }
     }
-
+    
+    .blinds {
+        img {
+            padding-top: 24px!important;
+            padding-left: 20px!important;
+        }
+        .uninstall {
+            padding-top: 0 !important;
+            padding-left: 0 !important;
+        }
+    }
+   
 }
