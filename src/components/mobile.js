@@ -16,13 +16,38 @@ import blindsGarage from '../images/icons/blindsGarage.png';
 import blindsLivingroom from '../images/icons/blindsLivingroom.png';
 import lampBedroom from '../images/icons/lampBedroom.png';
 import lampLivingRoom from '../images/icons/lampLivingRoom.png';
-import uninstall from '../images/buttons/uninstall.png';
+import uninstallLamps from '../images/buttons/uninstall.png';
 import uninstallBlinds from '../images/buttons/uninstallBlinds.png';
 
 
 class Mobile extends React.Component {
+  constructor(props) {
+    super(props)
 
-  renderMenu(props)  { 
+    this.state = {
+      phoneState: 'hide',
+      bgCameraPosition: 0    
+    };
+
+  }
+
+  cameraMoveLeft() {
+    if (this.state.bgCameraPosition === 0) {
+      this.setState({
+        bgCameraPosition: 5
+      });
+    } 
+}
+
+  componentDidMount() {
+    setTimeout(() => {  
+        this.setState({
+        phoneState: "show"
+      });
+    });    
+  }
+
+  renderMenu(props)  {
     if (this.props.bgMenuLamp === true) {
       return (
         <div className="menu">
@@ -48,7 +73,7 @@ class Mobile extends React.Component {
                   icon={lampLivingRoom} 
                 />
               </div>
-              <img src={uninstall} alt='uninstall' className="uninstall" />
+              <img src={uninstallLamps} alt='uninstallLamps' className="uninstall" />
             </div>
           </div>            
         </div>
@@ -83,6 +108,25 @@ class Mobile extends React.Component {
               <img src={uninstallBlinds} alt='uninstall' className="uninstall" />
             </div>
           </div>            
+        </div>
+      )
+    }
+
+    if (this.props.bgMenuCamera === true) {
+      return (
+        <div className="menu camera">
+          <div className="btnBack" onClick={this.props.actionBackBlinds}>
+            <span className="iconBack"></span>
+            Назад
+          </div>
+          <span>MaxiQ - Smart home</span>
+          <span>Камера кухня:</span>
+          <div className="parentCameraBox" 
+            style={{marginLeft: this.state.bgCameraPosition}}
+          />
+          <div className="bgCameraKitchen" />
+          <button onClick={this.cameraMoveLeft()} className="left">left</button>
+          <button className="right">right</button>
         </div>
       )
     }
@@ -133,7 +177,7 @@ class Mobile extends React.Component {
               bgBtn={this.props.bgBigBtnGarage}
               icon={garage} />
           </div>      
-          <div>
+          <div onClick={this.props.actionCamera}>
             <LongBtn icon={camera} />
           </div>
           <div>
@@ -142,19 +186,15 @@ class Mobile extends React.Component {
         </div>            
       </div>
     )
-      
-  
-    }
-
-
-    render() {
-      return (
-          <div className="mobile">
-            <img src={mobile} alt="phone" className={`bannerDefault show`} />
-            {this.renderMenu()}
-          </div>
-        );
-    }
+  }
+  render() {
+    return (
+        <div className="mobile">
+          <img src={mobile} alt="phone" className={`bannerDefault ${this.state.phoneState}`} />
+          {this.renderMenu()}
+        </div>
+      );
+  }
 }
 
 export default Mobile;

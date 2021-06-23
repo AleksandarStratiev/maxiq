@@ -17,32 +17,47 @@ import lampLivingroomOn from '../images/actions/lampLivingroomOn.png'
 import Mobile from './mobile';
 import Slogan from './slogan';
 
-// import { actionTv } from '../actions'
-
-
+import { 
+  lamp, 
+  back, 
+  backBlinds, 
+  klima, 
+  tv, 
+  fan, 
+  contact, 
+  garage, 
+  camera,
+  lampBedroom, 
+  lampLivingroom, 
+  blinds, 
+  blindsGarage, 
+  blindsLivingroom 
+} from '../actions/'
 
 class House extends React.Component {
   constructor(props) {
     super(props)
 
-    this.lamp = this.lamp.bind(this);
-    this.klima = this.klima.bind(this);
-    this.tv = this.tv.bind(this);
-    this.fan = this.fan.bind(this);
-    this.contact = this.contact.bind(this);
-    this.garage = this.garage.bind(this);
-    this.back = this.back.bind(this);
-    this.backBlinds = this.backBlinds.bind(this);
-    this.lampBedroom = this.lampBedroom.bind(this);
-    this.lampLivingroom = this.lampLivingroom.bind(this)
-    this.blinds = this.blinds.bind(this)
-    this.blindsGarage = this.blindsGarage.bind(this)
-    this.blindsLivingroom = this.blindsLivingroom.bind(this)
+    this.lamp = lamp.bind(this);
+    this.klima = klima.bind(this);
+    this.tv = tv.bind(this);
+    this.camera = camera.bind(this);
+    this.fan = fan.bind(this);
+    this.contact = contact.bind(this);
+    this.garage = garage.bind(this);
+    this.back = back.bind(this);
+    this.backBlinds = backBlinds.bind(this);
+    this.lampBedroom = lampBedroom.bind(this);
+    this.lampLivingroom = lampLivingroom.bind(this)
+    this.blinds = blinds.bind(this)
+    this.blindsGarage = blindsGarage.bind(this)
+    this.blindsLivingroom = blindsLivingroom.bind(this)
 
     
 
     this.state = {
         bgBannerMobile: 'default',
+        bgHouse: "hide",
         lamp: 'off',
         klima: 'off',
         klimaOpen: 'off',
@@ -56,6 +71,7 @@ class House extends React.Component {
         blindsLivingroom: false,
         menulamp: false,
         menuBlinds: false,
+        menuCamera: false,
         lampBedroom: false,
         lampLivingroom: false,
         bgBigBtnKlima: "off",
@@ -72,202 +88,20 @@ class House extends React.Component {
         bgBigBtnLongBlinds: "off", 
     };
 
+  }  
+
+  componentDidMount() {
+    setTimeout(() => {  
+        this.setState({bgHouse: "show"});
+    });    
   }
-
-  lamp() {
-    if (this.state.lamp === 'off') {
-      this.setState({
-        lamp: 'on'
-      });
-    } else {
-      this.setState({
-        lamp: 'off'
-      });
-    }
-    this.setState({bgBannerMobile: 'lamp'}); 
-
-    if (this.state.menulamp === false) {
-      this.setState({menulamp: true});
-    }
-  }
-
-  back() {
-
-    if (this.state.bgBigBtnLongBedroom === "on" || this.state.bgBigBtnLongLivingroom === "on") {
-      this.setState({bgBigBtnLamp: "on"});
-    } else {
-      this.setState({bgBigBtnLamp: "off"});
-    }
-
-    this.setState({
-      menulamp: false
-    }); 
-
-  }
-
-  backBlinds() {
-
-    if (this.state.bgBigBtnLongBlindsGarage === "on" || this.state.bgBigBtnLongBlindsLivingroom === "on") {
-      this.setState({bgBigBtnBlinds: "on"});
-    } else {
-      this.setState({bgBigBtnBlinds: "off"});
-    }
-
-    this.setState({
-      menuBlinds  : false
-    }); 
-
-  }
-  
-
-  klima() {
-    if (this.state.klima === 'off') {
-      this.setState({
-        klima: 'on', 
-        klimaOpen: {klimaOpen},
-        bgBigBtnKlima: "on"
-    });
-    } else {
-      this.setState({
-        klima: 'off', 
-        bgBigBtnKlima: 'off'
-      });
-    }
-    this.setState({bgBannerMobile: 'klima'});
-  }
-
-  tv() {
-    if (this.state.tv === 'off') {
-      this.setState({
-        tv: 'on', 
-        bgBigBtnTv: "on"
-      });
-    } else {
-      this.setState({
-        tv: 'off', 
-        bgBigBtnTv: 'off'
-      });
-    }
-    this.setState({bgBannerMobile: 'tv'});   
-  }
-
-  fan() {
-    if (this.state.fan === 'off') {
-      this.setState({
-        fan: 'on',
-        bgBigBtnFan: "on"
-      });
-    } else {
-      this.setState({
-        fan: 'off',
-        bgBigBtnFan: "off"
-      });
-    }
-    this.setState({bgBannerMobile: 'fan'});   
-  }
-
-  contact() {
-    if (this.state.contact === 'off') {
-      this.setState({
-        contact: 'on', 
-        oven: {ovenOn},
-        bgBigBtnContact: "on"
-    });
-    } else {
-      this.setState({
-        contact: 'off',
-        bgBigBtnContact: "off"
-      });
-    }
-    this.setState({bgBannerMobile: 'contact'});   
-  }
-  
-  garage() {
-    if (this.state.garage === false) {
-      this.setState({
-        garage: true,
-        bgBigBtnGarage: "on"
-      });
-    } else {
-      this.setState({
-        garage: false,
-        bgBigBtnGarage: "off"
-      });
-    }
-    this.setState({bgBannerMobile: 'garage'});   
-  }
-  
-  lampBedroom() {
-    if (this.state.lampBedroom === false) {
-      this.setState({
-        lampBedroom: true,
-        bgBigBtnLongBedroom: 'on'
-      });
-    } else {
-      this.setState({
-        lampBedroom: false,
-        bgBigBtnLongBedroom: 'off'
-      });
-    }
-  }
-
-  lampLivingroom() {
-    if (this.state.lampLivingroom === false) {
-      this.setState({
-        lampLivingroom: true,
-        bgBigBtnLongLivingroom: 'on'
-      });
-    } else {
-      this.setState({
-        lampLivingroom: false,
-        bgBigBtnLongLivingroom: 'off'
-      });
-    }
-  }
-
-  blinds() {
-    this.setState({bgBannerMobile: 'blinds'});   
-
-    if (this.state.menuBlinds === false) {
-      this.setState({menuBlinds: true});
-    }
-  }
-
-  blindsGarage() {
-    if (this.state.blindsGarage === false) {
-      this.setState({
-        blindsGarage: true,
-        bgBigBtnLongBlindsGarage: 'on'
-      });
-    } else {
-      this.setState({
-        blindsGarage: false,
-        bgBigBtnLongBlindsGarage: 'off'
-      });
-    }
-  }
-
-  blindsLivingroom() {
-    if (this.state.blindsLivingroom === false) {
-      this.setState({
-        blindsLivingroom: true,
-        bgBigBtnLongBlindsLivingroom: 'on'
-      });
-    } else {
-      this.setState({
-        blindsLivingroom: false,
-        bgBigBtnLongBlindsLivingroom: 'off'
-      });
-    }
-  }
-
-  
+ 
   render() {
-    console.log(this.state.bgBigBtnLongBlindsLivingroom)
+    console.log("camera state is: " + this.state.menuCamera)
     return (
       <div className="house" >
-        <img src={house} alt="house" className={`houseBackground show`} />
-        <div className="actions">
+        <img src={house} alt="house" className={`houseBackground ${this.state.bgHouse}`} />
+        <div className={`actions ${this.state.bgHouse}`}>
           <img src={tvOn} alt="tvOn" className={`tvOn ${this.state.tv}`} />
           <img src={fanOn} alt="fanOn" className={`fanOn ${this.state.fan}`} />
           <img src={klimaOn} alt="klimaOn" className={`klimaOn ${this.state.klima}`} />
@@ -278,18 +112,28 @@ class House extends React.Component {
             src={this.state.garage == false ? `${garageDown}` : `${garageTop}`} 
             alt="garageOn" className={`garageOn garageTop`} 
           />
-          <img src={lampBedroomOn} alt="lampBedroomOn" className={`lampBedroomOn ${this.state.lampBedroom}`} />
-          <img src={lampLivingroomOn} alt="lampLivingroomOn" className={`lampLivingroomOn ${this.state.lampLivingroom}`} />
+          <img 
+          src={lampBedroomOn} 
+          alt="lampBedroomOn" 
+          className={`lampBedroomOn ${this.state.lampBedroom}`} />
+          <img 
+            src={lampLivingroomOn} 
+            alt="lampLivingroomOn" 
+            className={`lampLivingroomOn ${this.state.lampLivingroom}`} />
           <img 
             src={this.state.blindsGarage == false ? `${blindsGarageDown}` : `${blindsGarageTop}`} 
-            alt="blindsGarage" className={`BlindsGarageOn`} 
+            alt="blindsGarage" 
+            className={`BlindsGarageOn`} 
           />
           <img 
             src={this.state.blindsLivingroom == false ? `${blindsLivingroomDown}` : `${blindsLivingroomTop}`} 
-            alt="blindsLivingroom" className={`BlindsLivingroomOn`} 
+            alt="blindsLivingroom" 
+            className={`BlindsLivingroomOn`} 
           />
-
         </div> 
+        <div className="containerBgBlack">
+          <div className="bgBlack" />
+        </div>
         <Slogan />
         <Mobile 
           actionLamp={this.lamp}
@@ -298,6 +142,7 @@ class House extends React.Component {
           actionFan={this.fan}
           actionContact={this.contact}
           actionGarage={this.garage}
+          actionCamera={this.camera}
           actionBlinds={this.blinds}
           actionBack={this.back}       
           actionBackBlinds={this.backBlinds}       
@@ -305,6 +150,7 @@ class House extends React.Component {
           actionLampLivingroom={this.lampLivingroom}
           actionBlindsGarage={this.blindsGarage}
           actionBlindsLivingroom={this.blindsLivingroom}
+          bgMenuCamera={this.state.menuCamera}
           bgBannerMobile={this.state.bgBannerMobile}
           bgMenuLamp={this.state.menulamp}
           bgMenuBlinnds={this.state.menuBlinds}
@@ -316,9 +162,9 @@ class House extends React.Component {
           bgBigBtnContact={this.state.bgBigBtnContact}
           bgBigBtnGarage={this.state.bgBigBtnGarage}
           bgBigBtnLongBedroom={this.state.bgBigBtnLongBedroom}
+          bgBigBtnLongLivingroom={this.state.bgBigBtnLongLivingroom}
           bgBigBtnLongBlindsGarage={this.state.bgBigBtnLongBlindsGarage}
           bgBigBtnLongBlindsLivingroom={this.state.bgBigBtnLongBlindsLivingroom}
-          bgBigBtnLongLivingroom={this.state.bgBigBtnLongLivingroom}
         />
       </div>
     )
