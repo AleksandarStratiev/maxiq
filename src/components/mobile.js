@@ -19,25 +19,28 @@ import lampLivingRoom from '../images/icons/lampLivingRoom.png';
 import uninstallLamps from '../images/buttons/uninstall.png';
 import uninstallBlinds from '../images/buttons/uninstallBlinds.png';
 
+// import {cameraMoveLeft} from '../actions/'
+
 
 class Mobile extends React.Component {
   constructor(props) {
     super(props)
 
+    // this.cameraMoveLeft = cameraMoveLeft.bind(this);
+    
     this.state = {
-      phoneState: 'hide',
-      bgCameraPosition: 0    
+      phoneState: 'hide'
     };
 
   }
 
-  cameraMoveLeft() {
-    if (this.state.bgCameraPosition === 0) {
-      this.setState({
-        bgCameraPosition: 5
-      });
-    } 
-}
+  // cameraMoveLeft() {
+  //   if (this.state.bgCameraPosition > 0) {
+  //     this.setState({
+  //       bgCameraPosition: -50
+  //     });
+  //   } 
+  // }
 
   componentDidMount() {
     setTimeout(() => {  
@@ -115,18 +118,26 @@ class Mobile extends React.Component {
     if (this.props.bgMenuCamera === true) {
       return (
         <div className="menu camera">
-          <div className="btnBack" onClick={this.props.actionBackBlinds}>
-            <span className="iconBack"></span>
-            Назад
+          <div className="btnBack" onClick={this.props.actionBackCamera}>
+            <span className="iconBack" />
+            <span className="textBack">Назад</span>
           </div>
           <span>MaxiQ - Smart home</span>
           <span>Камера кухня:</span>
           <div className="parentCameraBox" 
-            style={{marginLeft: this.state.bgCameraPosition}}
+            style={{marginLeft: this.props.cameraPosition}}
           />
           <div className="bgCameraKitchen" />
-          <button onClick={this.cameraMoveLeft()} className="left">left</button>
-          <button className="right">right</button>
+          <button 
+            onClick={this.props.actionCameraLeft} 
+            className={`left ${this.props.cametaBtnLeft}`}
+          >
+            <span className="icon" /></button>
+          <button 
+            onClick={this.props.actionCameraRight}
+            className={`right ${this.props.cametaBtnRight}`}
+          >
+            <span className="icon" /></button>
         </div>
       )
     }
@@ -180,8 +191,8 @@ class Mobile extends React.Component {
           <div onClick={this.props.actionCamera}>
             <LongBtn icon={camera} />
           </div>
-          <div>
-            <LongBtn icon={camera} />
+          <div className="disabled">
+            <div className="seeAll" />
           </div>
         </div>            
       </div>

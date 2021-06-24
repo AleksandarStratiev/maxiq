@@ -21,12 +21,15 @@ import {
   lamp, 
   back, 
   backBlinds, 
+  backCamera, 
   klima, 
   tv, 
   fan, 
   contact, 
   garage, 
   camera,
+  cameraMoveLeft,
+  cameraMoveRight,
   lampBedroom, 
   lampLivingroom, 
   blinds, 
@@ -42,11 +45,14 @@ class House extends React.Component {
     this.klima = klima.bind(this);
     this.tv = tv.bind(this);
     this.camera = camera.bind(this);
+    this.cameraMoveLeft = cameraMoveLeft.bind(this);
+    this.cameraMoveRight = cameraMoveRight.bind(this);
     this.fan = fan.bind(this);
     this.contact = contact.bind(this);
     this.garage = garage.bind(this);
     this.back = back.bind(this);
     this.backBlinds = backBlinds.bind(this);
+    this.backCamera = backCamera.bind(this);
     this.lampBedroom = lampBedroom.bind(this);
     this.lampLivingroom = lampLivingroom.bind(this)
     this.blinds = blinds.bind(this)
@@ -66,12 +72,16 @@ class House extends React.Component {
         contact: 'off',
         oven: 'off',
         blinds: 'off',
+        camera: 'off',
         garage: false,
         blindsGarage: false,
         blindsLivingroom: false,
         menulamp: false,
         menuBlinds: false,
         menuCamera: false,
+        bgCameraPosition: 130,
+        btnCameraLeft: true,
+        btnCameraRight: true,
         lampBedroom: false,
         lampLivingroom: false,
         bgBigBtnKlima: "off",
@@ -95,9 +105,11 @@ class House extends React.Component {
         this.setState({bgHouse: "show"});
     });    
   }
+
+
  
   render() {
-    console.log("camera state is: " + this.state.menuCamera)
+    console.log("camera state left is: " + this.state.bgCameraPosition)
     return (
       <div className="house" >
         <img src={house} alt="house" className={`houseBackground ${this.state.bgHouse}`} />
@@ -109,7 +121,7 @@ class House extends React.Component {
           <img src={contactOn} alt="contactOn" className={`contactOn ${this.state.contact}`} />
           <img src={ovenOn} alt="ovenOn" className={`ovenOn ${this.state.contact}`} />
           <img 
-            src={this.state.garage == false ? `${garageDown}` : `${garageTop}`} 
+            src={this.state.garage === false ? `${garageDown}` : `${garageTop}`} 
             alt="garageOn" className={`garageOn garageTop`} 
           />
           <img 
@@ -121,12 +133,12 @@ class House extends React.Component {
             alt="lampLivingroomOn" 
             className={`lampLivingroomOn ${this.state.lampLivingroom}`} />
           <img 
-            src={this.state.blindsGarage == false ? `${blindsGarageDown}` : `${blindsGarageTop}`} 
+            src={this.state.blindsGarage === false ? `${blindsGarageDown}` : `${blindsGarageTop}`} 
             alt="blindsGarage" 
             className={`BlindsGarageOn`} 
           />
           <img 
-            src={this.state.blindsLivingroom == false ? `${blindsLivingroomDown}` : `${blindsLivingroomTop}`} 
+            src={this.state.blindsLivingroom === false ? `${blindsLivingroomDown}` : `${blindsLivingroomTop}`} 
             alt="blindsLivingroom" 
             className={`BlindsLivingroomOn`} 
           />
@@ -145,11 +157,17 @@ class House extends React.Component {
           actionCamera={this.camera}
           actionBlinds={this.blinds}
           actionBack={this.back}       
-          actionBackBlinds={this.backBlinds}       
+          actionBackBlinds={this.backBlinds} 
+          actionBackCamera={this.backCamera}      
           actionLampBedroom={this.lampBedroom}
           actionLampLivingroom={this.lampLivingroom}
           actionBlindsGarage={this.blindsGarage}
           actionBlindsLivingroom={this.blindsLivingroom}
+          actionCameraLeft={this.cameraMoveLeft}          
+          actionCameraRight={this.cameraMoveRight}          
+          cameraPosition={this.state.bgCameraPosition}
+          cametaBtnLeft={this.state.btnCameraLeft}
+          cametaBtnRight={this.state.btnCameraRight}
           bgMenuCamera={this.state.menuCamera}
           bgBannerMobile={this.state.bgBannerMobile}
           bgMenuLamp={this.state.menulamp}

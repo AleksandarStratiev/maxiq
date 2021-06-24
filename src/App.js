@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.scss';
 import House from './components/house';
-import {useSelector, useDispatch} from 'react-redux';
-import {increment, decrement} from './actions'
+// import {useSelector, useDispatch} from 'react-redux';
+// import {increment, decrement} from './actions'
 
 
 function App() {
 
-  const counter = useSelector(state => state.counter);
-  const dispatch = useDispatch();
+  // const counter = useSelector(state => state.counter);
+  // const dispatch = useDispatch();
 
   return (
     <>

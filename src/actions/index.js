@@ -186,15 +186,53 @@ export function blindsLivingroom() {
     }
 }
 
-// action camera 
+// action camera show/hide mobile menu
 export function camera() {
     if (this.state.menuCamera === false) {
       this.setState({
-        menuCamera: true
+        menuCamera: true,
       });
     } else {
       this.setState({
-        menuCamera: false
+        menuCamera: false,
       });
     }
+}
+
+// btn back from Camera menu
+export function backCamera() {
+  this.setState({
+    menuCamera: false, 
+    bgBannerMobile: 'camera'
+  }); 
+}
+
+// action camera left and show/hide btns
+export function cameraMoveLeft() {
+  const position = this.state.bgCameraPosition;
+  if (position < 270) {    
+    this.setState({
+      bgCameraPosition: position + 70, 
+      btnCameraRight: true
+    });   
+  } 
+  // and hide btn left
+  if (position > 199) {
+    this.setState({btnCameraLeft: false});
+  }
+}
+
+// action camera right 
+export function cameraMoveRight() {
+  const position = this.state.bgCameraPosition;
+  if (position > -10) {   
+    this.setState({
+      bgCameraPosition: position - 70,
+      btnCameraLeft: true
+    }); 
+  }  
+  // and hide btn right
+  if ( position < 61) {
+    this.setState({btnCameraRight: false});
+  } 
 }
