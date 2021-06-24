@@ -19,28 +19,16 @@ import lampLivingRoom from '../images/icons/lampLivingRoom.png';
 import uninstallLamps from '../images/buttons/uninstall.png';
 import uninstallBlinds from '../images/buttons/uninstallBlinds.png';
 
-// import {cameraMoveLeft} from '../actions/'
-
 
 class Mobile extends React.Component {
   constructor(props) {
     super(props)
 
-    // this.cameraMoveLeft = cameraMoveLeft.bind(this);
-    
     this.state = {
       phoneState: 'hide'
     };
 
   }
-
-  // cameraMoveLeft() {
-  //   if (this.state.bgCameraPosition > 0) {
-  //     this.setState({
-  //       bgCameraPosition: -50
-  //     });
-  //   } 
-  // }
 
   componentDidMount() {
     setTimeout(() => {  
