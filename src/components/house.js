@@ -189,4 +189,4 @@ class House extends React.Component {
   }
 }
 
-export default House;
+export default House; 
